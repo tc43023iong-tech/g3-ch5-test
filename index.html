@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy English Quiz P3</title>
+    <title>Happy English Quiz P3 - Christmas Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -19,6 +19,19 @@
               'brand-pink': '#FF79C6',
               'brand-yellow': '#F1FA8C',
               'brand-orange': '#FFB86C',
+              'xmas-red': '#FF4444',
+              'xmas-green': '#2ECC71',
+              'xmas-gold': '#FFD700',
+              'snow-white': '#F8FAFC',
+            },
+            animation: {
+              'twinkle': 'twinkle 2s infinite',
+            },
+            keyframes: {
+              twinkle: {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0.5 },
+              }
             }
           }
         }
@@ -27,8 +40,12 @@
     <style>
       body {
         background-color: #f0f9ff;
-        background-image: radial-gradient(#dbeafe 1px, transparent 1px);
-        background-size: 20px 20px;
+        /* Snowflake-like pattern */
+        background-image: 
+          radial-gradient(#bfdbfe 2px, transparent 2px),
+          radial-gradient(#e0f2fe 3px, transparent 3px);
+        background-size: 50px 50px, 30px 30px;
+        background-position: 0 0, 15px 15px;
       }
       .animate-bounce-short {
         animation: bounce 0.5s infinite;
@@ -36,6 +53,19 @@
       @keyframes bounce {
         0%, 100% { transform: translateY(-5%); }
         50% { transform: translateY(0); }
+      }
+      .snow-border {
+        position: relative;
+      }
+      .snow-border::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: radial-gradient(circle, white 50%, transparent 60%) 0 0/20px 20px repeat-x;
+        opacity: 0.8;
       }
     </style>
   <script type="importmap">
